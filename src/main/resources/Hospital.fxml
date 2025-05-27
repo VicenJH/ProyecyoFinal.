@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml">
+    <RadioButton fx:id="radioAdmin" layoutX="50" layoutY="30" text="Admin"/>
+    <RadioButton fx:id="radioMedico" layoutX="50" layoutY="60" text="Médico"/>
+    <RadioButton fx:id="radioPaciente" layoutX="50" layoutY="90" text="Paciente"/>
+    <TextField fx:id="userIdField" layoutX="50" layoutY="130" promptText="Usuario"/>
+    <PasswordField fx:id="passwordField" layoutX="50" layoutY="170" promptText="Contraseña"/>
+    <Button fx:id="loginButton" layoutX="50" layoutY="210" text="Iniciar sesión" onAction="#handleLogin"/>
+</AnchorPane>
