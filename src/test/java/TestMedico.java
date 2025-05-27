@@ -1,5 +1,4 @@
-package src/test/java/co/edu/uniquindio/poo/hospital/model/TestMedico.java
-
+package co.edu.uniquindio.poo.hospital.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.List;
