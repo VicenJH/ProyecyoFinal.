@@ -3,7 +3,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml">
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.uniquindio.poo.hospital.viewController.HospitalController">
     <RadioButton fx:id="radioAdmin" layoutX="50" layoutY="30" text="Admin"/>
     <RadioButton fx:id="radioMedico" layoutX="50" layoutY="60" text="Médico"/>
     <RadioButton fx:id="radioPaciente" layoutX="50" layoutY="90" text="Paciente"/>

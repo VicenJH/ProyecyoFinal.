@@ -33,7 +33,8 @@ public class HospitalController {
         radioPaciente.setToggleGroup(roleGroup);
     }
 
-    public void handleLogin(ActionEvent event) {
+    @FXML
+    private void handleLogin(ActionEvent event) {
         String userId = userIdField.getText();
         String password = passwordField.getText();
 

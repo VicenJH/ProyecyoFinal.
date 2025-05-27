@@ -4,8 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-public class PanelMedicoController {
+import co.edu.uniquindio.poo.hospital.model.Medico;
+import co.edu.uniquindio.poo.hospital.model.Paciente;
+import co.edu.uniquindio.poo.hospital.model.Horario;
+public class MedicoController {
 
     @FXML
     private ComboBox<Paciente> comboPacientes;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="co.edu.uniquindio.poo.hospital.viewController.MedicoController">
+    <children>
+        <ComboBox fx:id="comboPacientes" layoutX="20" layoutY="20"/>
+        <TextField fx:id="txtDiagnostico" layoutX="20" layoutY="60"/>
+        <TextField fx:id="txtTratamiento" layoutX="20" layoutY="100"/>
+        <TextField fx:id="txtDia" layoutX="20" layoutY="140"/>
+        <TextField fx:id="txtHora" layoutX="20" layoutY="180"/>
+        <ListView fx:id="listHorarios" layoutX="200" layoutY="20"/>
+        <ListView fx:id="listNotificaciones" layoutX="200" layoutY="140"/>
+        <Button text="Registrar Diagnóstico" layoutX="20" layoutY="220" onAction="#registrarDiagnostico"/>
+        <Button text="Registrar Tratamiento" layoutX="160" layoutY="220" onAction="#registrarTratamiento"/>
+        <Button text="Asignar Horario" layoutX="20" layoutY="260" onAction="#asignarHorario"/>
+        <Button text="Ver Notificaciones" layoutX="160" layoutY="260" onAction="#verNotificaciones"/>
+    </children>
+</AnchorPane>
