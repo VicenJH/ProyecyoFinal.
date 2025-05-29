@@ -1,13 +1,15 @@
 package co.edu.uniquindio.poo.hospital.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public class TestMedico {
 
     @Test
     public void testVerNotificaciones() {
-        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", "Cardiología");
+        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", LocalDate.of(2002,6,17),"Cardiología","12345");
 
         // Agregar algunas notificaciones
         medico.getNotificaciones().add("Cambio en cita: Nueva hora 10:00 AM");

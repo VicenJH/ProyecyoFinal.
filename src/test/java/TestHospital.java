@@ -3,6 +3,8 @@ import co.edu.uniquindio.poo.hospital.model.Medico;
 import co.edu.uniquindio.poo.hospital.model.Paciente;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public class TestHospital {
@@ -10,8 +12,8 @@ public class TestHospital {
     @Test
     public void testAgregarMedicoYPaciente() {
         Hospital hospital = new Hospital();
-        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", "Cardiología");
-        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com");
+        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", LocalDate.of(2000,4,4),"Cardiología", "12345");
+        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com", LocalDate.of(1995,6,15), "54321");
 
         hospital.agregarMedico(medico);
         hospital.agregarPaciente(paciente);
@@ -28,8 +30,8 @@ public class TestHospital {
     @Test
     public void testAsignarPacienteAMedico() {
         Hospital hospital = new Hospital();
-        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", "Cardiología");
-        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com");
+        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com",LocalDate.of(2000,4,4), "Cardiología", "12345");
+        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com", LocalDate.of(1995,6,15), "54321");
 
         hospital.agregarMedico(medico);
         hospital.agregarPaciente(paciente);

@@ -1,11 +1,13 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Administrador extends Usuario {
 
-    public Administrador(int id, String nombre, String email) {
-        super(id, nombre, email);
+    public Administrador(int id, String nombre, String email, LocalDate fechaNacimiento,
+                         String contrasena) {
+        super(id, nombre, email, fechaNacimiento, contrasena);
     }
 
     public void registrarMedico(Hospital hospital, Medico nuevoMedico) {

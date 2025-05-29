@@ -3,14 +3,16 @@ import co.edu.uniquindio.poo.hospital.model.Medico;
 import co.edu.uniquindio.poo.hospital.model.Paciente;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class TestCitaMedica {
 
     @Test
     public void testDetallesCita() {
-        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", "Cardiología");
-        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com");
+        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", LocalDate.of(2024,5,20),"Cardiología","4564");
+        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com", LocalDate.of(2023,6,9),"5345");
 
         LocalDateTime fechaCita = LocalDateTime.of(2025, 5, 10, 14, 30);
 

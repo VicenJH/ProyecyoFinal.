@@ -1,7 +1,8 @@
-package;
-
+package co.edu.uniquindio.poo.hospital.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.time.LocalDate;
 
 public class TestAdministrador {
 
@@ -9,16 +10,16 @@ public class TestAdministrador {
     public void testGenerarReporteOcupacion() {
         Hospital hospital = new Hospital();
 
-        Administrador administrador = new Administrador(1, "Carlos Gómez", "carlos@email.com");
+        Administrador administrador = new Administrador(1, "Carlos Gómez", "carlos@email.com",LocalDate.of(2023, 4, 24),"42343");
 
-        Medico medico1 = new Medico(101, "Dr. Juan Pérez", "juan@hospital.com", "Cardiología");
-        Medico medico2 = new Medico(102, "Dra. María López", "maria@hospital.com", "Pediatría");
+        Medico medico1 = new Medico(101, "Dr. Juan Pérez", "juan@hospital.com",LocalDate.of(1990,3,5),"Cardiología","898698");
+        Medico medico2 = new Medico(102, "Dra. María López", "maria@hospital.com", LocalDate.of(1980,2,6),"Pediatría","798797");
         administrador.registrarMedico(hospital, medico1);
         administrador.registrarMedico(hospital, medico2);
 
-        Paciente paciente1 = new Paciente(201, "Luis Fernández", "luis@email.com");
-        Paciente paciente2 = new Paciente(202, "Ana Rodríguez", "ana@email.com");
-        Paciente paciente3 = new Paciente(203, "Pedro García", "pedro@email.com");
+        Paciente paciente1 = new Paciente(201, "Luis Fernández", "luis@email.com", LocalDate.of(1980,5,6),"4545");
+        Paciente paciente2 = new Paciente(202, "Ana Rodríguez", "ana@email.com", LocalDate.of(2001,4,23),"45345");
+        Paciente paciente3 = new Paciente(203, "Pedro García", "pedro@email.com", LocalDate.of(2020,06,11),"345345");
 
         administrador.registrarPaciente(hospital, paciente1);
         administrador.registrarPaciente(hospital, paciente2);

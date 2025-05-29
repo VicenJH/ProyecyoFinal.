@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="426.0" style="-fx-background-color: #87CEEB;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.RegistrarNewPaciente">
+   <children>
+      <Label layoutX="40.0" layoutY="20.0" prefHeight="30.0" prefWidth="138.0" text="Registrarse">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="70.0" text="Ingrese su nombre" />
+      <TextField layoutX="40.0" layoutY="90.0" />
+      <Label layoutX="40.0" layoutY="130.0" text="Ingrese su apellido" />
+      <TextField layoutX="40.0" layoutY="150.0" />
+      <Label layoutX="40.0" layoutY="190.0" text="Ingrese su correo" />
+      <TextField layoutX="40.0" layoutY="210.0" />
+   </children>
+</AnchorPane>

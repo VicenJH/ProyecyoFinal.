@@ -1,47 +1,54 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Paciente extends Usuario {
+public class Paciente extends Usuario implements IGestionCitas {
 
     private HistorialMedico historial;
     private List<CitaMedica> citasProgramadas;
     private List<String> notificaciones;
 
-    public Paciente(int id, String nombre, String email) {
-        super(id, nombre, email);
+    public Paciente(int id, String nombre, String email, LocalDate fechaNacimiento, String contrasena) {
+        super(id, nombre, email, fechaNacimiento, contrasena);
         this.historial = new HistorialMedico();
         this.citasProgramadas = new ArrayList<>();
         this.notificaciones = new ArrayList<>();
     }
 
-    public void actualizarDatos(String nuevoNombre, String nuevoEmail) {
-        setNombre(nuevoNombre);
-        setEmail(nuevoEmail);
-    }
-
+    @Override
     public void solicitarCita(CitaMedica cita) {
         citasProgramadas.add(cita);
         notificaciones.add("Cita médica programada para el día " + cita.getFechaHora());
     }
 
+    @Override
     public void cancelarCita(CitaMedica cita) {
         if (citasProgramadas.remove(cita)) {
             notificaciones.add("La cita médica para el día " + cita.getFechaHora() + " ha sido cancelada.");
         }
     }
-
-    public HistorialMedico consultarHistorial() {
-        return historial;
-    }
-
-    public List<String> getNotificaciones() {
-        return notificaciones;
-    }
-
-    public List<CitaMedica> getCitasProgramadas() {
+    @Override
+    public List<CitaMedica> obtenerCitasProgramadas() {
         return citasProgramadas;
+    }
+
+    @Override
+    public void reprogramarCita(CitaMedica cita, String nuevaFechaHora) {
+        if (citasProgramadas.contains(cita)) {
+            cita.setFechaHora(nuevaFechaHora);
+            notificaciones.add("Cita reprogramada para el día " + nuevaFechaHora);
+        }
+    }
+
+    @Override
+    public void notificarCambioCita(String mensaje) {
+        notificaciones.add("Cambio en cita: " + mensaje);
+    }
+    public void actualizarDatos(String nuevoNombre, String nuevoEmail) {
+        setNombre(nuevoNombre);
+        setEmail(nuevoEmail);
     }
 
     public HistorialMedico getHistorial() {
@@ -52,8 +59,16 @@ public class Paciente extends Usuario {
         this.historial = historial;
     }
 
+    public List<CitaMedica> getCitasProgramadas() {
+        return citasProgramadas;
+    }
+
     public void setCitasProgramadas(List<CitaMedica> citasProgramadas) {
         this.citasProgramadas = citasProgramadas;
+    }
+
+    public List<String> getNotificaciones() {
+        return notificaciones;
     }
 
     public void setNotificaciones(List<String> notificaciones) {
@@ -72,8 +87,7 @@ public class Paciente extends Usuario {
             for (String nota : notificaciones) {
                 System.out.println("- " + nota);
             }
-            notificaciones.clear(); // Limpia después de ver
+            notificaciones.clear();
         }
     }
-
 }

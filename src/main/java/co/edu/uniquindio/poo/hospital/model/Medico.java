@@ -1,20 +1,58 @@
 package co.edu.uniquindio.poo.hospital.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Medico extends Usuario {
+public class Medico extends Usuario implements IGestionCitas {
     private String especialidad;
     private List<Paciente> pacientes;
     private List<Horario> horariosConsulta;
     private List<String> notificaciones;
+    private List<CitaMedica> citas;
 
-    public Medico(int id, String nombre, String email, String especialidad) {
-        super(id, nombre, email);
+    public Medico(int id, String nombre, String email, LocalDate fechaNacimiento, String especialidad, String contrasena) {
+        super(id, nombre, email, fechaNacimiento, contrasena);
         this.especialidad = especialidad;
         this.pacientes = new ArrayList<>();
         this.horariosConsulta = new ArrayList<>();
         this.notificaciones = new ArrayList<>();
+        this.citas = new ArrayList<>();
+    }
+
+    @Override
+    public void solicitarCita(CitaMedica cita) {
+        citas.add(cita);
+    }
+
+    @Override
+    public void cancelarCita(CitaMedica cita) {
+        citas.remove(cita);
+    }
+    @Override
+    public List<CitaMedica> obtenerCitasProgramadas() {
+        return citas;
+    }
+
+    @Override
+    public void reprogramarCita(CitaMedica cita, String nuevaFechaHora) {
+        if (citas.contains(cita)) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            LocalDateTime nuevaFecha = LocalDateTime.parse(nuevaFechaHora, formatter);
+            cita.setFechaHora(nuevaFecha);
+            notificaciones.add("Cita reprogramada para el día " + nuevaFechaHora);
+        }
+    }
+
+    @Override
+    public void notificarCambioCita(String mensaje) {
+        notificaciones.add("Cambio en cita: " + mensaje);
+    }
+
+    public List<CitaMedica> getCitas() {
+        return citas;
     }
 
     public List<String> getNotificaciones() {
@@ -74,7 +112,7 @@ public class Medico extends Usuario {
         return "Sin horario asignado";
     }
 
-    public void notificarCambioCita(Paciente paciente1, String mensaje) {
+    public void notificarCambioCita(Paciente paciente, String mensaje) {
         notificaciones.add("Cambio en cita: " + mensaje);
     }
 
@@ -86,8 +124,7 @@ public class Medico extends Usuario {
             for (String nota : notificaciones) {
                 System.out.println("- " + nota);
             }
-            notificaciones.clear(); // Limpiar después de mostrar
+            notificaciones.clear();
         }
     }
-
 }
