@@ -12,19 +12,21 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.10.2</junit.version>
-    <path.to.fx>C:\javafx-sdk-17.0.6\lib</path.to.fx>
+    <path.to.fx>C:\Users\PC GAMER\Downloads\openjfx-24.0.1_windows-x64_bin-sdk\lib</path.to.fx>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
-      <version>17.0.6</version>
+      <version>24.0.1</version>
     </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
-      <version>17.0.6</version>
+      <version>24.0.1</version>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -49,12 +51,6 @@
         <configuration>
           <source>11</source>
           <target>11</target>
-          <compilerArgs>
-            <arg>--module-path</arg>
-            <arg>${path.to.fx}</arg>
-            <arg>--add-modules</arg>
-            <arg>javafx.controls,javafx.fxml</arg>
-          </compilerArgs>
         </configuration>
       </plugin>
       <plugin>
@@ -64,15 +60,6 @@
         <executions>
           <execution>
             <id>default-cli</id>
-            <configuration>
-              <mainClass>co.edu.uniquindio.poo.hospital.Main</mainClass>
-              <launcher>app</launcher>
-              <jlinkZipName>app</jlinkZipName>
-              <jlinkImageName>app</jlinkImageName>
-              <noManPages>true</noManPages>
-              <stripDebug>true</stripDebug>
-              <noHeaderFiles>true</noHeaderFiles>
-            </configuration>
           </execution>
         </executions>
       </plugin>
