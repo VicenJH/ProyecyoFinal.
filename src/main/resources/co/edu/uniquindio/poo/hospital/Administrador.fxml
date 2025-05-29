@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.AdminController">
+    <Label text="Panel Administrador" layoutX="20" layoutY="20"/>
+    <Button fx:id="btnGestionUsuarios" text="Gestionar Usuarios" layoutX="20" layoutY="60"/>
+    <Button fx:id="btnGestionSalas" text="Gestionar Salas" layoutX="20" layoutY="100"/>
+    <Button fx:id="btnReportes" text="Generar Reportes" layoutX="20" layoutY="140"/>
+    <ListView fx:id="listaReportes" layoutX="200" layoutY="60" prefWidth="200" prefHeight="120"/>
+</AnchorPane>

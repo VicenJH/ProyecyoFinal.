@@ -12,9 +12,9 @@ public class TestPaciente {
     @Test
     public void testGetCitasProgramadas() {
 
-        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com", LocalDate.of(1990,5,15));
+        Paciente paciente = new Paciente(101, "Juan López", "juan@correo.com", LocalDate.of(1990,5,15), "gfggfg");
 
-        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", LocalDate.of(2003,3,23),"Cardiología");
+        Medico medico = new Medico(1, "Dr. Pérez", "perez@hospital.com", LocalDate.of(2003,3,23),"Cardiología","123456789");
 
         CitaMedica cita1 = new CitaMedica(LocalDateTime.of(2025, 5, 10, 14, 30), paciente, medico);
         CitaMedica cita2 = new CitaMedica(LocalDateTime.of(2025, 6, 20, 9, 0), paciente, medico);

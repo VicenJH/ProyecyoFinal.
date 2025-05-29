@@ -11,7 +11,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<junit.version>5.10.2</junit.version>  </properties>
+    <junit.version>5.10.2</junit.version>
+    <path.to.fx>C:\javafx-sdk-17.0.6\lib</path.to.fx>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -24,8 +26,7 @@
       <artifactId>javafx-fxml</artifactId>
       <version>17.0.6</version>
     </dependency>
-
-<dependency>
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>
@@ -36,7 +37,8 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>  </dependencies>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -47,6 +49,12 @@
         <configuration>
           <source>11</source>
           <target>11</target>
+          <compilerArgs>
+            <arg>--module-path</arg>
+            <arg>${path.to.fx}</arg>
+            <arg>--add-modules</arg>
+            <arg>javafx.controls,javafx.fxml</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
       <plugin>
@@ -55,10 +63,9 @@
         <version>0.0.8</version>
         <executions>
           <execution>
-            <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>co.edu.uniquindio.poo.hospital/co.edu.uniquindio.poo.hospital.HelloApplication</mainClass>
+              <mainClass>co.edu.uniquindio.poo.hospital.Main</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

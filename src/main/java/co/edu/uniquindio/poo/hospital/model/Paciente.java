@@ -1,14 +1,16 @@
 package co.edu.uniquindio.poo.hospital.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Paciente extends Usuario implements IGestionCitas {
 
-    private HistorialMedico historial;
     private List<CitaMedica> citasProgramadas;
     private List<String> notificaciones;
+    private IHistorialMedico historial;
 
     public Paciente(int id, String nombre, String email, LocalDate fechaNacimiento, String contrasena) {
         super(id, nombre, email, fechaNacimiento, contrasena);
@@ -37,7 +39,8 @@ public class Paciente extends Usuario implements IGestionCitas {
     @Override
     public void reprogramarCita(CitaMedica cita, String nuevaFechaHora) {
         if (citasProgramadas.contains(cita)) {
-            cita.setFechaHora(nuevaFechaHora);
+            LocalDateTime nuevaFecha = LocalDateTime.parse(nuevaFechaHora, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+            cita.setFechaHora(nuevaFecha);
             notificaciones.add("Cita reprogramada para el día " + nuevaFechaHora);
         }
     }
@@ -51,11 +54,11 @@ public class Paciente extends Usuario implements IGestionCitas {
         setEmail(nuevoEmail);
     }
 
-    public HistorialMedico getHistorial() {
+    public IHistorialMedico getHistorial() {
         return historial;
     }
 
-    public void setHistorial(HistorialMedico historial) {
+    public void setHistorial(IHistorialMedico historial) {
         this.historial = historial;
     }
 

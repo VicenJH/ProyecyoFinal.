@@ -5,6 +5,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import co.edu.uniquindio.poo.hospital.model.Paciente;
+import co.edu.uniquindio.poo.hospital.model.Medico;
+import co.edu.uniquindio.poo.hospital.model.CitaMedica;
 
 public class Medico extends Usuario implements IGestionCitas {
     private String especialidad;

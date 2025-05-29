@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.PacienteController">
+    <Label text="Panel Paciente" layoutX="20" layoutY="20"/>
+    <Button fx:id="btnSolicitarCita" text="Solicitar Cita" layoutX="20" layoutY="60"/>
+    <Button fx:id="btnCancelarCita" text="Cancelar Cita" layoutX="20" layoutY="100"/>
+    <Button fx:id="btnVerHistorial" text="Ver Historial" layoutX="20" layoutY="140"/>
+    <ListView fx:id="listaNotificaciones" layoutX="200" layoutY="60" prefWidth="200" prefHeight="120"/>
+</AnchorPane>

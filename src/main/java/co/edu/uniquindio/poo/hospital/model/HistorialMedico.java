@@ -1,22 +1,38 @@
 package co.edu.uniquindio.poo.hospital.model;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class HistorialMedico {
-    private List<String> antecedentes;
+public class HistorialMedico implements IHistorialMedico {
+    private final List<String> registros = new ArrayList<>();
 
-    public HistorialMedico() {
-        this.antecedentes = new ArrayList<>();
+    @Override
+    public void agregarRegistro(String registro) {
+        registros.add(registro);
     }
 
-    public void actualizarHistorial(String nuevoAntecedente) {
-        antecedentes.add(nuevoAntecedente);
+    @Override
+    public void actualizarRegistro(int indice, String nuevoRegistro) {
+        if (indice >= 0 && indice < registros.size()) {
+            registros.set(indice, nuevoRegistro);
+        }
+    }
+
+    @Override
+    public List<String> obtenerRegistros() {
+        return new ArrayList<>(registros);
     }
 
     public List<String> getAntecedentes() {
-        return antecedentes;
+        return obtenerRegistros();
+    }
+
+    @Override
+    public void actualizarHistorial(String registro) {
+        if (!registros.isEmpty()) {
+            registros.set(registros.size() - 1, registro);
+        } else {
+            registros.add(registro);
+        }
     }
 }
-

@@ -44,13 +44,24 @@ public class HospitalController {
         }
 
         if (radioAdmin.isSelected()) {
-            // cargarVista("AdminPanel.fxml");
+            cargarVista("/co/edu/uniquindio/poo/hospital/Admin.fxml");
         } else if (radioMedico.isSelected()) {
-            // cargarVista("MedicoPanel.fxml");
+            cargarVista("/co/edu/uniquindio/poo/hospital/Medico.fxml");
         } else if (radioPaciente.isSelected()) {
-            // cargarVista("PacientePanel.fxml");
+            cargarVista("/co/edu/uniquindio/poo/hospital/Paciente.fxml");
         } else {
             showAlert("Error", "Por favor, seleccione un rol.");
+        }
+    }
+
+    private void cargarVista(String rutaFXML) {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource(rutaFXML));
+            javafx.scene.Parent root = loader.load();
+            javafx.stage.Stage stage = (javafx.stage.Stage) loginButton.getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(root));
+        } catch (Exception e) {
+            showAlert("Error", "No se pudo cargar la vista: " + e.getMessage());
         }
     }
 

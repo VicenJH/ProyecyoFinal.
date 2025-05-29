@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="312.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.HospitalController">
+<AnchorPane prefHeight="312.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.hospital.viewController.HospitalController">
     <RadioButton fx:id="radioAdmin" layoutX="48.0" layoutY="104.0" text="Admin" />
     <RadioButton fx:id="radioMedico" layoutX="48.0" layoutY="129.0" text="Médico" />
     <RadioButton fx:id="radioPaciente" layoutX="48.0" layoutY="156.0" text="Paciente" />
@@ -25,4 +22,9 @@
          <Font size="14.0" />
       </font>
    </Label>
+   <ImageView fitHeight="312.0" fitWidth="207.0" layoutX="289.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../../../../Imagenes/FotoHospitalE.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
